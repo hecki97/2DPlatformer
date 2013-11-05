@@ -4,7 +4,7 @@ using System.Collections;
 public class PauseMenu1 : MonoBehaviour {
 
 	private AudioSource bgMusic;
-	bool SoundOn = true; 
+	//bool SoundOn = true; 
 	bool isPaused = false;
 	private SceneFader sceneFader;
 	private Color currentColor;
@@ -26,15 +26,17 @@ public class PauseMenu1 : MonoBehaviour {
 			
 			if(GUI.Button(new Rect((Screen.width - 160)/2,290,160,60),"Mute"))
 			{
-				if (SoundOn)
+				//if (SoundOn)
+				if (!bgMusic)
 				{
-					bgMusic.Stop();
-					SoundOn = false;
+					//bgMusic.Stop();
+					bgMusic.mute = true;
+					//SoundOn = false;
 				}
 				else
 				{
-					bgMusic.Play();
-					SoundOn = true;
+					bgMusic.mute = false;
+					//SoundOn = true;
 				}	
 				
 			}
