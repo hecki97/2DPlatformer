@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuIntro.cs">
+    <Files>
+      <File FileName="Assets\MyAssets\MyScripts\button.cs" Line="10" Column="77" />
+      <File FileName="Assets\Scripts\LevelDesigner\LevelDesigner.cs" Line="10" Column="26" />
+      <File FileName="Assets\MyAssets\MyScripts\Shop.cs" Line="146" Column="5" />
+      <File FileName="Assets\MyAssets\MyScripts\MuteScript.cs" Line="17" Column="84" />
+      <File FileName="Assets\MyAssets\MyScripts\Brick.cs" Line="18" Column="4" />
+      <File FileName="Assets\Scripts\ToggleTexture.cs" Line="12" Column="3" />
+      <File FileName="Assets\Scripts\MenuIntro.cs" Line="22" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
