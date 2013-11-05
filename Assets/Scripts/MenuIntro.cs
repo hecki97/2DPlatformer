@@ -97,14 +97,16 @@ public class MenuIntro : MonoBehaviour {
 			{
 				if (SoundOn)
 				{
-					bgMusic.Stop();
+					//bgMusic.Stop();
+					bgMusic.mute = true;
 					SoundOn = false;
 				}
 				else
 				{
-					bgMusic.Play();
+					//bgMusic.Play();
 					SoundOn = true;
-				}	
+					bgMusic.mute = false;
+				}		
 			}	
 			
 			butRect.y += ctrlHeight + 40;

@@ -22,7 +22,15 @@ public class HealthController : MonoBehaviour {
 	//hecki97
 	private GameOverFader gameOverFader;
 	public AudioClip gameOver;
-
+	
+	public Texture2D heart;
+	public Texture2D lifePoint;
+	public GUIText heartText;
+	public GUIText lifePointText;
+	public GUIText gameOverText;
+	private float heartCount;
+	private float lifePointCount;
+	
 	private string healthText = "Health";
 	private string lifePointsText = "LifePoint";
 	private string maxHealthText = "MaxHealth";
@@ -38,6 +46,10 @@ public class HealthController : MonoBehaviour {
 	
 	// Use this for initialization
 	protected virtual void Start () {
+		//hecki97
+		SetCountText();
+		gameOverText.text = "";
+		
 		currentHealth = InventoryManager.inventory.GetItems(healthText);
 		lifePoints = InventoryManager.inventory.GetItems(lifePointsText);
 	}
@@ -56,6 +68,10 @@ public class HealthController : MonoBehaviour {
 		
 		if (currentHealth > 0)
 			lifePoints = InventoryManager.inventory.GetItems(lifePointsText);
+	
+		heartCount = currentHealth;
+		lifePointCount = lifePoints;
+		SetCountText();
 	}
 
 	void ApplyDamage(float damage)
@@ -75,6 +91,7 @@ public class HealthController : MonoBehaviour {
 			if (currentHealth == 0)
 			{
 				lifePoints -= 1;
+				InventoryManager.inventory.SetItems(lifePointsText,lifePoints);
 				
 				if (lifePoints <= 0)
 				{
@@ -111,6 +128,7 @@ public class HealthController : MonoBehaviour {
 		
 		//Application.LoadLevel(Application.loadedLevel);
 		sceneFader.SwitchScene(Application.loadedLevel);
+		InventoryManager.inventory.GetItems(lifePointsText);
 	}
 	
 	IEnumerator GameOver(float delay)
@@ -156,8 +174,13 @@ public class HealthController : MonoBehaviour {
 	{
 
 		if (currentHealth <= 0 && lifePoints <= 0)
-			GUI.Label(new Rect((Screen.width - 80)/2,(Screen.height - 30)/2,80,30),"GAME OVER");
+			//GUI.Label(new Rect((Screen.width - 80)/2,(Screen.height - 30)/2,80,30),"GAME OVER");
+			gameOverText.text = "GAME OVER!";
 	}
 	
-	
+	void SetCountText()
+	{
+		heartText.text = heartCount.ToString();	
+		lifePointText.text = lifePointCount.ToString();	
+	}
 }

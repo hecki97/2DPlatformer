@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour {
 	
 	//hecki97
 	bool SoundOn = true;
+	
 	private AudioSource bgMusic;
 	
 	void Awake()
@@ -37,13 +38,15 @@ public class PauseMenu : MonoBehaviour {
 			{
 				if (SoundOn)
 				{
-					bgMusic.Stop();
+					//bgMusic.Stop();
+					bgMusic.mute = true;
 					SoundOn = false;
 				}
 				else
 				{
-					bgMusic.Play();
+					//bgMusic.Play();
 					SoundOn = true;
+					bgMusic.mute = false;
 				}	
 				
 			}
