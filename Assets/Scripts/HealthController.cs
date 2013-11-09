@@ -22,7 +22,7 @@ public class HealthController : MonoBehaviour {
 	//hecki97
 	private GameOverFader gameOverFader;
 	public AudioClip gameOver;
-	
+	public GUIText hitText;
 	public Texture2D heart;
 	public Texture2D lifePoint;
 	public GUIText heartText;
@@ -30,6 +30,7 @@ public class HealthController : MonoBehaviour {
 	public GUIText gameOverText;
 	private float heartCount;
 	private float lifePointCount;
+	public float textDelay = 0.45F;
 	
 	private string healthText = "Health";
 	private string lifePointsText = "LifePoint";
@@ -40,6 +41,7 @@ public class HealthController : MonoBehaviour {
 		//hecki97
 		gameOverFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameOverFader>();
 		
+		
 		sceneFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneFader>();
 		bgMusic = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();	
 	}
@@ -49,6 +51,7 @@ public class HealthController : MonoBehaviour {
 		//hecki97
 		SetCountText();
 		gameOverText.text = "";
+		hitText.text = "";
 		
 		currentHealth = InventoryManager.inventory.GetItems(healthText);
 		lifePoints = InventoryManager.inventory.GetItems(lifePointsText);
@@ -78,7 +81,8 @@ public class HealthController : MonoBehaviour {
 	{
 		if (currentHealth > 0)
 		{	
-			currentHealth -= damage;
+			currentHealth -= damage;			
+			StartCoroutine(SetHitText(textDelay));
 			
 			AudioSource.PlayClipAtPoint(hitSound,transform.position,1);
 			
@@ -182,5 +186,12 @@ public class HealthController : MonoBehaviour {
 	{
 		heartText.text = heartCount.ToString();	
 		lifePointText.text = lifePointCount.ToString();	
+	}
+	
+	IEnumerator SetHitText(float textDelay)
+	{
+		hitText.text = "-1";
+		yield return new WaitForSeconds(textDelay);
+		hitText.text = "";
 	}
 }

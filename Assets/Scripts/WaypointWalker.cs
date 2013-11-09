@@ -19,6 +19,10 @@ public class WaypointWalker : MonoBehaviour {
 	public AudioClip hitSound;
 	public AudioClip deathSound;
 	
+	//hecki97
+	public GUIText damageText;
+	public float textDelay = 0.45F;
+	
 	protected bool isHit = false;
 	bool lookRight = true;
 	SpriteController spriteController;
@@ -27,6 +31,9 @@ public class WaypointWalker : MonoBehaviour {
 		
 	// Use this for initialization
 	protected virtual void Start () {
+		//hecki97
+		damageText.text = "";
+		
 		spriteController = GetComponent<SpriteController>();
 		
 		foreach (Transform wp in waypoints)
@@ -91,6 +98,7 @@ public class WaypointWalker : MonoBehaviour {
 		{	
 			isHit = true;
 			currentHealth -= damage;
+			StartCoroutine(SetDamageText(textDelay));
 			AudioSource.PlayClipAtPoint(hitSound,transform.position,1);
 			
 			if (currentHealth <= 0)
@@ -98,6 +106,7 @@ public class WaypointWalker : MonoBehaviour {
 				currentHealth = 0;
 				AudioSource.PlayClipAtPoint(deathSound,transform.position,1);
 				Die();
+				damageText.text = "";
 			}
 			else
 			{
@@ -144,5 +153,10 @@ public class WaypointWalker : MonoBehaviour {
 		}
 	}
 
-	
+	IEnumerator SetDamageText(float textDelay)
+	{
+		damageText.text = "+1";
+		yield return new WaitForSeconds(textDelay);
+		damageText.text = "";
+	}
 }

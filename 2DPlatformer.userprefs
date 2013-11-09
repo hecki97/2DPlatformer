@@ -1,15 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HealthController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WaypointWalker.cs">
     <Files>
-      <File FileName="Assets\Scripts\HealthController.cs" Line="51" Column="24" />
-      <File FileName="Assets\Scripts\Inventory\InventoryManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\Coin.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory\Inventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory\InventoryCollider.cs" Line="18" Column="1" />
-      <File FileName="Assets\Scripts\PauseMenu.cs" Line="50" Column="7" />
-      <File FileName="Assets\Scripts\MenuIntro.cs" Line="109" Column="7" />
-      <File FileName="Assets\Scripts\ToggleTexture.cs" Line="9" Column="14" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HealthController.cs" Line="54" Column="10" />
+      <File FileName="Assets\Scripts\WaypointWalker.cs" Line="35" Column="24" />
+      <File FileName="Assets\Standard Assets (Mobile)\Scripts\SidescrollControl.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LayerParallax.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Camera2D.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\MyScripts\DamageGUI.cs" Line="18" Column="98" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
