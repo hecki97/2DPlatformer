@@ -5,6 +5,8 @@ Project("{23DABF7E-76D4-353D-1F2B-283A78B8F277}") = "2DPlatformer", "Assembly-CS
 EndProject
 Project("{23DABF7E-76D4-353D-1F2B-283A78B8F277}") = "2DPlatformer", "Assembly-CSharp-Editor.csproj", "{0AAF6CFE-071F-7B8D-7815-AA86D7B34DB7}"
 EndProject
+Project("{23DABF7E-76D4-353D-1F2B-283A78B8F277}") = "2DPlatformer", "Assembly-UnityScript-firstpass.unityproj", "{97679A22-CACA-B114-FCB5-52E86BC787BF}"
+EndProject
 Project("{23DABF7E-76D4-353D-1F2B-283A78B8F277}") = "2DPlatformer", "Assembly-UnityScript.unityproj", "{880377F7-3D1C-C874-739A-43CA6FCB74F0}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{0AAF6CFE-071F-7B8D-7815-AA86D7B34DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAF6CFE-071F-7B8D-7815-AA86D7B34DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AAF6CFE-071F-7B8D-7815-AA86D7B34DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97679A22-CACA-B114-FCB5-52E86BC787BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97679A22-CACA-B114-FCB5-52E86BC787BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97679A22-CACA-B114-FCB5-52E86BC787BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97679A22-CACA-B114-FCB5-52E86BC787BF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{880377F7-3D1C-C874-739A-43CA6FCB74F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{880377F7-3D1C-C874-739A-43CA6FCB74F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{880377F7-3D1C-C874-739A-43CA6FCB74F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																									GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
