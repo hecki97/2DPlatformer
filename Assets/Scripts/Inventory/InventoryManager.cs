@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour {
 	//private string expText = "exp";
 
 	
-	public float initHealth = 5;
+	public float initHealth = 100;
 	public float initLifePoint = 3;
 	public bool initValues = false;
 	

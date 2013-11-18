@@ -8,10 +8,10 @@ public class PauseMenu : MonoBehaviour {
 	private float ctrlWidth = 160;
 	private float ctrlHeight = 30;
 	private SceneFader sceneFader;
-	
+
 	//hecki97
 	bool SoundOn = true;
-	
+	bool VolumeMenu = false;	
 	private AudioSource bgMusic;
 	
 	void Awake()
@@ -25,6 +25,8 @@ public class PauseMenu : MonoBehaviour {
 	// Use this for initialization
 	void OnGUI () {
 	
+
+
 		if (isPause)
 		{
 			butRect.y = (Screen.height - (2*ctrlHeight + 20))/2;
@@ -50,16 +52,16 @@ public class PauseMenu : MonoBehaviour {
 				}	
 				
 			}
-			
-			
-			butRect.y += ctrlHeight + 40;
+						
+			butRect.y += ctrlHeight + 20;
 			if (GUI.Button (butRect,"Spiel beenden"))
 			{
 				ToggleTimeScale();
 				sceneFader.SwitchScene(0);
 			}
 		}
-		
+
+
 	}
 	
 	

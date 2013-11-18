@@ -12,7 +12,7 @@ public class WaypointWalker : MonoBehaviour {
 	public int currentHealth = 3;
 	public float damageEffectPause = 0.2F;
 	public string tag = "Player";
-	public int damageValue = 1;
+	public int damageValue = 10;
 	public GameObject deathPrefabRight;
 	public GameObject deathPrefabLeft;
 	

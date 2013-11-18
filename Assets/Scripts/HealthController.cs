@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HealthController : MonoBehaviour {
 	
-	public float currentHealth = 5;
+	public float currentHealth = 100;
 	public float damageEffectPause = 0.2F;
 	public float lifePoints = 3;
 	//public float deathDelay = 4;
@@ -11,7 +11,7 @@ public class HealthController : MonoBehaviour {
 	public float respawnDelay = 3;
 	public GameObject deathPrefab;
 	
-	protected float maxHealth = 5;
+	protected float maxHealth = 100;
 	protected float maxLifePoints = 3;
 	
 	public AudioClip deathSound;
@@ -31,7 +31,7 @@ public class HealthController : MonoBehaviour {
 	private float heartCount;
 	private float lifePointCount;
 	public float textDelay = 0.45F;
-	
+
 	private string healthText = "Health";
 	private string lifePointsText = "LifePoint";
 	private string maxHealthText = "MaxHealth";
@@ -40,8 +40,7 @@ public class HealthController : MonoBehaviour {
 	{
 		//hecki97
 		gameOverFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameOverFader>();
-		
-		
+			
 		sceneFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneFader>();
 		bgMusic = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();	
 	}
@@ -59,7 +58,8 @@ public class HealthController : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {		
-		
+
+
 		if(currentHealth < 1)
 			currentHealth = 0;
 		
@@ -81,9 +81,9 @@ public class HealthController : MonoBehaviour {
 	{
 		if (currentHealth > 0)
 		{	
-			currentHealth -= damage;			
+			currentHealth -= damage;
 			StartCoroutine(SetHitText(textDelay));
-			
+		
 			AudioSource.PlayClipAtPoint(hitSound,transform.position,1);
 			
 			//hecki97

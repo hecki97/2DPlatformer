@@ -42,16 +42,17 @@ public class MenuIntro : MonoBehaviour {
 		if (menuIntro)
 		{
 			controlsMenu = false;
-			
+
 			butRect.y = (Screen.height - (2*ctrlHeight + 20))/2;
+			/*
 			if (GUI.Button(butRect,butText))
 			{
 				//Application.LoadLevel(1);
 				sceneFader.SwitchScene(1);
-			}
+			}*/
 			
 			//hecki97
-			butRect.y += ctrlHeight + 20;
+			butRect.y += ctrlHeight;
 			if(GUI.Button(butRect,"Level (test)"))
 			{
 				levelMenu = true;
@@ -64,16 +65,17 @@ public class MenuIntro : MonoBehaviour {
 				optionsMenu = true;
 				menuIntro = false;
 			}
-			
+
+			/*
 			butRect.y += ctrlHeight + 40;
 			if (GUI.Button(butRect,"Schlie" + (char)223 +"en"))
 			{
 				//Application.LoadLevel(1);
 				Application.Quit();
-			}
+			}*/
 	
 			
-			butRect.y += ctrlHeight + 20;
+			butRect.y += ctrlHeight + 80;
 			GUI.Label(butRect,"			InDev v." + version);
 			butRect.y += ctrlHeight - 10;
 			GUI.Label(butRect," 			by hecki97");
@@ -150,27 +152,30 @@ public class MenuIntro : MonoBehaviour {
 		if (levelMenu)
 		{
 			butRect.y = (Screen.height - (2*ctrlHeight + 20))/2;
-			GUI.Label(butRect,"			  Levels");
+			//GUI.Label(butRect,"			  Levels");
 			
-			butRect.y += ctrlHeight + 10;
+			//butRect.y += ctrlHeight + 10;
 			if(GUI.Button(butRect,"Level 1"))
 			{
+				sceneFader.SwitchScene(1);
 				levelMenu = true;
 				menuIntro = false;
 			}
 			butRect.y += ctrlHeight + 10;
 			if(GUI.Button(butRect,"Level 2"))
 			{
+				sceneFader.SwitchScene(5);
 				levelMenu = true;
 				menuIntro = false;
 			}
 			butRect.y += ctrlHeight + 10;
-			if(GUI.Button(butRect,"Level 3"))
+			if(GUI.Button(butRect,"Level - Boss"))
 			{
+				sceneFader.SwitchScene(4);
 				levelMenu = true;
 				menuIntro = false;
 			}
-			butRect.y += ctrlHeight + 10;
+			/*butRect.y += ctrlHeight + 10;
 			if(GUI.Button(butRect,"Level 4"))
 			{
 				levelMenu = true;
@@ -181,7 +186,7 @@ public class MenuIntro : MonoBehaviour {
 			{
 				levelMenu = true;
 				menuIntro = false;
-			}
+			}*/
 			butRect.y += ctrlHeight + 20;
 			if(GUI.Button(butRect,"Back to Menu"))
 			{

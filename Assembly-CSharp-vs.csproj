@@ -12,13 +12,14 @@
 	<AssemblyName>Assembly-CSharp</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	<DebugSymbols>true</DebugSymbols>
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_1;UNITY_4_2;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;cube</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_0;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;cube</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -36,6 +37,7 @@
 	<Reference Include="System" />
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
 	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
@@ -44,18 +46,28 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MyAssets\MyScripts\Button.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\Checkpoint.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\Coin.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\DamageGUI.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\EnemyHealthGUI.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\FollowPlayer.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\GUIBars.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\GameOverFader.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\GuiVersionText.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\HUDFPS.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\Help.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\HelpFollowPlayer.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\HotKeys.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\LevelName.cs" />
-     <Compile Include="Assets\MyAssets\MyScripts\MuteScript.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\PauseMenu1.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\PlayerDemo.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\PlayerHealth.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\Shop.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\ShopMenu.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\Timer.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\Void.cs" />
+     <Compile Include="Assets\MyAssets\MyScripts\VolumeMenu.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\oldScripts\Barrel.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\oldScripts\Brick.cs" />
      <Compile Include="Assets\MyAssets\MyScripts\oldScripts\CoinBrick.cs" />
