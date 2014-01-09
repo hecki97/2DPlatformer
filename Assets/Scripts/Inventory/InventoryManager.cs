@@ -10,6 +10,9 @@ public class InventoryManager : MonoBehaviour {
 	
 	// hecki97
 	public float portal = 0;
+	public bool isMuted = false;
+	public float currentVolume = 1;
+	private string currentVolumeText = "currentVolume";
 	//private string expText = "exp";
 
 	

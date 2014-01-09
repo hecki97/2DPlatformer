@@ -20,8 +20,8 @@ public class WaypointWalker : MonoBehaviour {
 	public AudioClip deathSound;
 	
 	//hecki97
-	public GUIText damageText;
-	public float textDelay = 0.45F;
+	public GameObject dealDamagePrefab;
+	public Vector3 offset;
 	
 	protected bool isHit = false;
 	bool lookRight = true;
@@ -31,8 +31,6 @@ public class WaypointWalker : MonoBehaviour {
 		
 	// Use this for initialization
 	protected virtual void Start () {
-		//hecki97
-		damageText.text = "";
 		
 		spriteController = GetComponent<SpriteController>();
 		
@@ -98,7 +96,10 @@ public class WaypointWalker : MonoBehaviour {
 		{	
 			isHit = true;
 			currentHealth -= damage;
-			StartCoroutine(SetDamageText(textDelay));
+
+			//hecki97
+			Destroy(Instantiate(dealDamagePrefab,transform.position + offset,Quaternion.identity),1);
+
 			AudioSource.PlayClipAtPoint(hitSound,transform.position,1);
 			
 			if (currentHealth <= 0)
@@ -106,7 +107,6 @@ public class WaypointWalker : MonoBehaviour {
 				currentHealth = 0;
 				AudioSource.PlayClipAtPoint(deathSound,transform.position,1);
 				Die();
-				damageText.text = "";
 			}
 			else
 			{
@@ -151,12 +151,5 @@ public class WaypointWalker : MonoBehaviour {
 			if (other.gameObject.tag == tag)
 			other.gameObject.SendMessage("ApplyDamage",damageValue,SendMessageOptions.DontRequireReceiver);
 		}
-	}
-
-	IEnumerator SetDamageText(float textDelay)
-	{
-		damageText.text = "+1";
-		yield return new WaitForSeconds(textDelay);
-		damageText.text = "";
 	}
 }

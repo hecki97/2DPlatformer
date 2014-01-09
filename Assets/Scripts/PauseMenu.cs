@@ -12,25 +12,35 @@ public class PauseMenu : MonoBehaviour {
 	//hecki97
 	bool SoundOn = true;
 	bool VolumeMenu = false;	
+	private BlurEffect blurEffect;
 	private AudioSource bgMusic;
 	
 	void Awake()
 	{
-		sceneFader = GetComponent<SceneFader>();
+		sceneFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneFader>();
 		butRect = new Rect((Screen.width - ctrlWidth)/2,0,ctrlWidth, ctrlHeight);
 		
 		bgMusic = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
+
+		blurEffect = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BlurEffect>();
 	}
-	
+
+	//hecki97
+	void OnMouseUp()
+	{
+		//ToggleTimeScale();
+		Debug.Log("klick!!");
+	}
+
 	// Use this for initialization
 	void OnGUI () {
-	
-
 
 		if (isPause)
 		{
 			butRect.y = (Screen.height - (2*ctrlHeight + 20))/2;
-			
+
+
+
 			if (GUI.Button (butRect,"Weiter"))
 				ToggleTimeScale();
 			
@@ -60,17 +70,15 @@ public class PauseMenu : MonoBehaviour {
 				sceneFader.SwitchScene(0);
 			}
 		}
-
-
 	}
 	
-	
+
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
 			ToggleTimeScale();
-	}
+		}
 
 	void ToggleTimeScale()
 	{
@@ -83,6 +91,7 @@ public class PauseMenu : MonoBehaviour {
 			Time.timeScale = 1;
 		}
 		isPause = !isPause;
+		blurEffect.enabled = !blurEffect.enabled;
 	}
 
 }

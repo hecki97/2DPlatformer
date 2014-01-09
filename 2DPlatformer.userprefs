@@ -1,21 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuIntro.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
     <Files>
-      <File FileName="Assets\Scripts\MenuIntro.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\Button.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\Help.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\PauseMenu1.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\FollowPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\Timer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ToggleTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MenuIntro.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\HUDFPS.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\GuiVersionText.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\MyScripts\CollectItem.cs" Line="101" Column="25" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="102" Column="18" />
+      <File FileName="Assets\Standard Assets (Mobile)\Scripts\SidescrollControl.js" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets (Mobile)\Scripts\Joystick.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PauseMenu.cs" Line="33" Column="3" />
       <File FileName="Assets\Scripts\HealthController.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\HotKeys.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\HelpFollowPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\MyScripts\EasterEgg.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

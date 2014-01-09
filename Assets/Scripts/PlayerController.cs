@@ -3,6 +3,11 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 	
+	public float timer = 10.0F;
+	public GUIText timerText;
+	private SceneFader sceneFader;
+	private HealthController playerHealth;
+
 	public float slayingTime = 0.2F;
 	public float gravity = 5;
 	public float speed = 8;
@@ -12,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 	
 	public AudioClip jumpSound;
 	public AudioClip attackSound;
-	
+
 	[HideInInspector]
 	public bool sceneSwitch = false;
 	
@@ -24,7 +29,19 @@ public class PlayerController : MonoBehaviour {
 	CharacterController characterController;
 	SpriteController spriteController;
 	HealthController healthController;
-	
+
+	//hecki97
+	public bool touchInput = false;
+	public float acclerationy;
+
+
+	void Awake()
+	{
+		timerText.material.color = Color.white;
+		sceneFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneFader>();
+	}
+
+
 	// Use this for initialization
 	void Start () {
 		characterController = GetComponent<CharacterController>();
@@ -34,29 +51,57 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		timerText.text = "Timer : " + timer.ToString("0");
+		acclerationy = Input.acceleration.y;
+
+
+		timer -= Time.deltaTime;
+		if (timer <= 0)
+		{
+			timer = 0;
+			sceneFader.SwitchScene(Application.loadedLevel);
+		}
+		
+		if (timer <= 30)
+		{
+			timerText.material.color = Color.yellow;
+		}
+		if (timer <= 10)
+		{
+			timerText.material.color = Color.red;
+		}
+
+
 		if (Time.timeScale > 0)
 		InputCheck();
 		Move();
 		SetAnimation();
 		Fight();
-		
+
+		if ((Input.GetKey(KeyCode.LeftAlt)) && (Input.GetKeyDown("2")))
+			speed++;
+
 	}
 	
 	
 	
 	void InputCheck()
 	{	
-		if ((healthController.currentHealth > 0)&&(!sceneSwitch))
+		if ((healthController.currentHealth > 0)&&(!sceneSwitch)&&(timer > 0))
 		{
-			velocity = Input.GetAxis("Horizontal") * speed;
+			if (!touchInput)
+				velocity = Input.GetAxis("Horizontal") * speed;
+			else
+				velocity = Input.acceleration.x * speed;
 			
 			if (velocity > 0)
 				lookRight = true;
 		
 			if (velocity < 0)
 				lookRight = false;
-		
-			if (Input.GetButtonDown("Jump"))
+		if (!touchInput)
+		{
+			if ((Input.GetButtonDown("Jump")))
 			{
 				inputJump = true;	
 			}
@@ -64,7 +109,16 @@ public class PlayerController : MonoBehaviour {
 			{
 				inputJump = false;	
 			}
-		
+		}
+		else
+		{
+			if (acclerationy >= 1)
+				inputJump = true;
+			else
+				inputJump = false;
+
+		}
+
 			if (Input.GetButtonDown("Fire1")&&!isSlaying)
 			{
 				isSlaying = true;
@@ -95,9 +149,9 @@ public class PlayerController : MonoBehaviour {
 		{
 			moveDirection.y -= gravity;
 		}
-		
-		moveDirection.x = velocity;
-		characterController.Move(moveDirection * Time.deltaTime);
+
+			moveDirection.x = velocity;
+			characterController.Move(moveDirection * Time.deltaTime);
 	}
 	
 	void Fight()
