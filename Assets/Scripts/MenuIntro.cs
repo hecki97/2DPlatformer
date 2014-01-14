@@ -44,15 +44,15 @@ public class MenuIntro : MonoBehaviour {
 			controlsMenu = false;
 
 			butRect.y = (Screen.height - (2*ctrlHeight + 20))/2;
-			/*
+
 			if (GUI.Button(butRect,butText))
 			{
 				//Application.LoadLevel(1);
 				sceneFader.SwitchScene(1);
-			}*/
+			}
 			
 			//hecki97
-			butRect.y += ctrlHeight;
+			butRect.y += ctrlHeight + 20;
 			if(GUI.Button(butRect,"Level (test)"))
 			{
 				levelMenu = true;
@@ -66,14 +66,19 @@ public class MenuIntro : MonoBehaviour {
 				menuIntro = false;
 			}
 
-			/*
+			butRect.y += ctrlHeight + 20;
+			if(GUI.Button(butRect,"MiniGame: Quasar"))
+			{
+				sceneFader.SwitchScene(5);
+			}
+
 			butRect.y += ctrlHeight + 40;
 			if (GUI.Button(butRect,"Schlie" + (char)223 +"en"))
 			{
 				//Application.LoadLevel(1);
 				Application.Quit();
-			}*/
-	
+			}
+
 			
 			butRect.y += ctrlHeight + 80;
 			GUI.Label(butRect,"			InDev v." + version);

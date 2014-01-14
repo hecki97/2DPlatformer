@@ -14,8 +14,6 @@ public class CollectItem : Item {
 	public float delay = 2F;
 	public float seconds;
 	private string restTime;
-	public Vector3 offset;
-
 
 
 	void Awake()
@@ -29,7 +27,6 @@ public class CollectItem : Item {
 		butRect.y = (Screen.height - (2*ctrlHeight + 20))/2;
 
 		//GUI
-
 		//GUI.Box(new Rect(5, 160, 120, 20), "Plants : x" + item.currentPlants);
 		//GUI.Box(new Rect(5, 180, 120, 20), "WoodPlanks : x" + item.currentWoodPlanks);
 		//GUI.Box(new Rect(5, 200, 120, 20), "Sticks : x" + item.currentSticks);
@@ -37,6 +34,7 @@ public class CollectItem : Item {
 		if (isActivated)
 		{
 			//GUI.Box(butRect, "Press E");
+			butRect.y += ctrlHeight + 150;
 			if (GUI.Button(butRect, "Press E"))
 			{
 				isCollecting = true;
@@ -44,11 +42,11 @@ public class CollectItem : Item {
 
 			}
 		}
-
+		
 		if (isCollecting && isActivated)
 		{
 			restTime = seconds.ToString("0.0");
-			butRect.y += ctrlHeight + 20;
+			butRect.y += ctrlHeight + 25;
 			GUI.Box(butRect, restTime + "/2 s");
 		}
 
@@ -59,7 +57,6 @@ public class CollectItem : Item {
 		if (tag == "" || other.gameObject.CompareTag(tag))
 		{
 			isActivated = true;
-			Debug.Log("Activated");
 		}
 	}
 
@@ -69,7 +66,6 @@ public class CollectItem : Item {
 		{
 			isActivated = false;
 			isCollecting = false;
-			Debug.Log("Deactivated");
 		}
 	}
 	

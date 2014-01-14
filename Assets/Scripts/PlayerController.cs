@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		else
 		{
-			if (acclerationy >= 1)
+			if (acclerationy <= -0.75)
 				inputJump = true;
 			else
 				inputJump = false;
