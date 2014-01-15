@@ -23,39 +23,44 @@ public class MiniGame_Quasar : MonoBehaviour {
 		currentNumberText.text = currentNumber.ToString();
 
 		if (currentNumber == 15)
+		{
 			currentNumberText.color = Color.yellow;
-		else if (currentNumber == 16)
-			currentNumberText.color = Color.yellow;
-		else if (currentNumber == 17)
-			currentNumberText.color = Color.yellow;
-		else if (currentNumber == 18)
-			currentNumberText.color = Color.green;
-		else if (currentNumber == 19)
-			currentNumberText.color = Color.green;
-		else if (currentNumber == 20)
-			currentNumberText.color = Color.green;
-		else if (currentNumber >= 21)
-			currentNumberText.color = Color.red;
-		else
-			currentNumberText.color = Color.white;
-	}
-
-	void CheckPayout()
-	{
-		if (currentNumber == 15)
 			payout = 5;
+		}
 		else if (currentNumber == 16)
+		{
+			currentNumberText.color = Color.yellow;
 			payout = 10;
+		}
 		else if (currentNumber == 17)
+		{
+			currentNumberText.color = Color.yellow;
 			payout = 20;
+		}
 		else if (currentNumber == 18)
-			payout = 25;
-		else if (currentNumber == 19)
+		{
+			currentNumberText.color = Color.green;
 			payout = 30;
-		else if (currentNumber == 20)
+		}
+		else if (currentNumber == 19)
+		{
+			currentNumberText.color = Color.green;
 			payout = 40;
+		}
+		else if (currentNumber == 20)
+		{
+			currentNumberText.color = Color.green;
+		}
 		else if (currentNumber >= 21)
+		{
+			currentNumberText.color = Color.red;
 			payout = 0;
+		}
+		else
+		{
+			currentNumberText.color = Color.white;
+			payout = 0;
+		}
 	}
 
 	void OnGUI()
@@ -84,7 +89,6 @@ public class MiniGame_Quasar : MonoBehaviour {
 			{
 				int i = Random.Range(4, 7);
 				currentNumber += i;
-				CheckPayout();
 			}
 
 			butRect.x += ctrlWidth + 20;
@@ -92,7 +96,6 @@ public class MiniGame_Quasar : MonoBehaviour {
 			{
 				int i = Random.Range(1, 8);
 				currentNumber += i;
-				CheckPayout();
 			}
 
 

@@ -6,7 +6,10 @@ public class ShopMenu : MonoBehaviour {
 	public float currentHealth = 5;
 	public float lifePoints = 3;
 	public float money = 0;
-	
+
+	public float InvHealth;
+	public bool isActivated = false;
+
 	private SceneFader sceneFader;	
 	//hecki97
 	public float maxHealth = 5;
@@ -27,7 +30,7 @@ public class ShopMenu : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		currentHealth = InventoryManager.inventory.GetItems(healthText);
+		InvHealth = InventoryManager.inventory.GetItems(healthText);
 		lifePoints = InventoryManager.inventory.GetItems(lifePointsText);
 		
 		money = InventoryManager.inventory.GetItems(moneyText);
@@ -42,7 +45,10 @@ public class ShopMenu : MonoBehaviour {
 		//hecki97
 		AddjustCurrentHealth(0);
 		AddjustCurrentLifePoints(0);
-		
+
+
+
+
 		
 		
 		if (currentHealth > 0)

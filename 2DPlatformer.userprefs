@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuIntro.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyAssets\MyScripts\ShopScript.cs">
     <Files>
-      <File FileName="..\..\Documents\Platformer\Assets\Scripts\PlayerHealth.cs" Line="95" Column="32" />
-      <File FileName="Assets\MyAssets\MyScripts\MiniGame_Quasar.cs" Line="70" Column="32" />
-      <File FileName="Assets\MyAssets\MyScripts\CollectItem.cs" Line="30" Column="28" />
-      <File FileName="Assets\Scripts\MenuIntro.cs" Line="55" Column="32" />
+      <File FileName="Assets\MyAssets\MyScripts\ShopScript.cs" Line="67" Column="16" />
+      <File FileName="Assets\MyAssets\MyScripts\ShopScript.cs" Line="67" Column="16" />
+      <File FileName="Assets\MyAssets\MyScripts\ShopMenu.cs" Line="41" Column="3" />
+      <File FileName="Assets\MyAssets\MyScripts\CollectItem.cs" Line="27" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
