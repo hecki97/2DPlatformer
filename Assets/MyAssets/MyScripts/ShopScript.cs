@@ -11,6 +11,7 @@ public class ShopScript : MonoBehaviour {
 	public float invCurrentHealth = 5;
 	public float invLifePoints = 3;
 	public float invMoney = 0;
+	public float currentHealth;
 
 	private Rect butRect;
 	private float ctrlWidth = 160;
@@ -71,6 +72,12 @@ public class ShopScript : MonoBehaviour {
 		if (isActivated && isOpen)
 		{
 			butRect.y += 20;
+			GUI.Box(butRect, "Current Health: " + currentHealth);
+			
+			butRect.y += 40;
+			GUI.Box(butRect, "Current LifePoints: " + invLifePoints);
+
+			butRect.y += 60;
 			if (GUI.Button(butRect, "Exit Shop"))
 			{
 				isActivated = false;
@@ -89,9 +96,16 @@ public class ShopScript : MonoBehaviour {
 		else
 			Time.timeScale = 1;
 
+		if (isActivated && Input.GetKeyDown(KeyCode.E))
+		{
+			isOpen = true;
+			isPressed = false;
+		}
+
 		if (isActivated)
 		{
 				InventoryManager.inventory.SetItems(healthText, playerHealth.currentHealth);
+				currentHealth = InventoryManager.inventory.GetItems(healthText);
 
 		}
 	}

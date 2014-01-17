@@ -5,10 +5,10 @@ public class HotKeys : MonoBehaviour {
 
 	private AudioSource bgMusic;
 	public bool SoundOn = true;
-	public float currentVolume;
+	public float currentVolume = 1;
 	public GUIText VolumeText;
 
-	private string currentVolumeText = "currentVolume";
+	private string soundVolumeText = "SoundVolume";
 
 	void Awake()
 	{
@@ -18,19 +18,22 @@ public class HotKeys : MonoBehaviour {
 
 	void Start()
 	{
-		currentVolume = InventoryManager.inventory.GetItems(currentVolumeText);
+		bgMusic.volume = InventoryManager.inventory.GetItems(soundVolumeText);
+		//if (bgMusic.volume == 0)
+		//	currentVolume = InventoryManager.inventory.GetItems(soundVolumeText)
 	}
 
 	// Update is called once per frame
 	void Update () {
 	
 		if (currentVolume != bgMusic.volume)
-			InventoryManager.inventory.SetItems(currentVolumeText, currentVolume);
+			InventoryManager.inventory.SetItems(soundVolumeText, currentVolume);
 
 
-		VolumeText.text = currentVolume.ToString("0.0");	
+		VolumeText.text = bgMusic.volume.ToString("0.0");	
 		if (SoundOn)
 			currentVolume = bgMusic.volume;
+			InventoryManager.inventory.SetItems(soundVolumeText, currentVolume);
 
 		if (bgMusic.volume <= 0)
 			VolumeText.text = "Muted";
@@ -52,7 +55,6 @@ public class HotKeys : MonoBehaviour {
 		{
 			bgMusic.mute = false;
 			bgMusic.volume += 0.1F;
-			InventoryManager.inventory.SetItems(currentVolumeText, currentVolume);
 		}
 		else
 			bgMusic.volume = 1;
@@ -87,5 +89,6 @@ public class HotKeys : MonoBehaviour {
 			bgMusic.volume = currentVolume;
 		}	
 		SoundOn = !SoundOn;
+		InventoryManager.inventory.SetItems(soundVolumeText, currentVolume);
 	}
 }

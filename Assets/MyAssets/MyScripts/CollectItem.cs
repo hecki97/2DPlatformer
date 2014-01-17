@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class CollectItem : Item {
+	public bool plants = true;
+	public bool sticks = false;
 
 	private Item item;
 	public bool isActivated = false;
@@ -93,7 +95,11 @@ public class CollectItem : Item {
 			if (isCollecting && isActivated)
 			{
 				AudioSource.PlayClipAtPoint(itemAquired, transform.position, 1);
-				item.currentPlants++;
+				
+				if (plants)
+					item.currentPlants++;
+				else
+					item.currentSticks++;
 				Destroy(gameObject);
 				isCollecting = false;
 			}

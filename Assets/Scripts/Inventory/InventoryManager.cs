@@ -11,10 +11,9 @@ public class InventoryManager : MonoBehaviour {
 	// hecki97
 	public float portal = 0;
 	public bool isMuted = false;
-	public float currentVolume = 1;
-	private string currentVolumeText = "currentVolume";
 	//private string expText = "exp";
-
+	public float initSoundVolume = 1;
+	private string soundVolumeText = "SoundVolume";
 	
 	public float initHealth = 100;
 	public float initLifePoint = 3;
@@ -48,7 +47,11 @@ public class InventoryManager : MonoBehaviour {
 			inventory.SetItems(healthText, initHealth);
 			inventory.SetItems(lifePointsText, initLifePoint);
 			inventory.SetItems(maxHealthText, initHealth);
-			
+
+			//hecki97
+			//Settings
+			inventory.SetItems(soundVolumeText, initSoundVolume);
+
 		}
 	}
 
