@@ -1,16 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyAssets\MyScripts\ShopScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuIntro.cs">
     <Files>
-      <File FileName="Assets\MyAssets\MyScripts\HotKeys.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\ShopScript.cs" Line="80" Column="19" />
-      <File FileName="Assets\MyAssets\MyScripts\ShopMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\CollectItem.cs" Line="99" Column="10" />
-      <File FileName="Assets\Scripts\Inventory\InventoryManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyAssets\MyScripts\HotKeys.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ToggleTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpriteController.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\MyScripts\CollectItem.cs" Line="6" Column="20" />
+      <File FileName="Assets\MyAssets\MyScripts\ShopScript.cs" Line="142" Column="24" />
+      <File FileName="Assets\MyAssets\MyScripts\Item.cs" Line="25" Column="68" />
+      <File FileName="Assets\MyAssets\MyScripts\MiniGame_Quasar.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\MyScripts\GenScript.cs" Line="18" Column="30" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="77" Column="41" />
+      <File FileName="Assets\Scripts\MenuIntro.cs" Line="179" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

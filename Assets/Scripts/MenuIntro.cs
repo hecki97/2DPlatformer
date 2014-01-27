@@ -176,7 +176,7 @@ public class MenuIntro : MonoBehaviour {
 			butRect.y += ctrlHeight + 10;
 			if(GUI.Button(butRect,"Level - Boss"))
 			{
-				sceneFader.SwitchScene(4);
+				sceneFader.SwitchScene(3);
 				levelMenu = true;
 				menuIntro = false;
 			}

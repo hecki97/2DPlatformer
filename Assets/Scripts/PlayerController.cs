@@ -33,12 +33,19 @@ public class PlayerController : MonoBehaviour {
 	//hecki97
 	public bool touchInput = false;
 	public float acclerationy;
+	bool doubleJump = false;
 
 
 	void Awake()
 	{
 		timerText.material.color = Color.white;
 		sceneFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneFader>();
+	}
+
+	void FixedUpdate()
+	{
+		if (characterController.isGrounded)
+			doubleJump = false;
 	}
 
 
@@ -61,15 +68,13 @@ public class PlayerController : MonoBehaviour {
 			timer = 0;
 			sceneFader.SwitchScene(Application.loadedLevel);
 		}
-		
+
+		if (timer > 30)
+			timerText.material.color = Color.white;
 		if (timer <= 30)
-		{
 			timerText.material.color = Color.yellow;
-		}
 		if (timer <= 10)
-		{
 			timerText.material.color = Color.red;
-		}
 
 
 		if (Time.timeScale > 0)
@@ -135,15 +140,18 @@ public class PlayerController : MonoBehaviour {
 		
 	void Move()
 	{
-		if (characterController.isGrounded)
+		if ((characterController.isGrounded || !doubleJump) && inputJump)
 		{
 			moveDirection.y = -1;
 			
-			if(inputJump)
-			{	
+			//if(inputJump)
+			//{	
 				AudioSource.PlayClipAtPoint(jumpSound,transform.position,1);
 				moveDirection.y = jumpPower;
-			}
+
+				if (!characterController.isGrounded)
+					doubleJump = true;
+			//}
 		}
 		else
 		{

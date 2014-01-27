@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class CollectItem : Item {
-	public bool plants = true;
-	public bool sticks = false;
+	public bool plants;
+	public bool sticks;
 
 	private Item item;
 	public bool isActivated = false;
