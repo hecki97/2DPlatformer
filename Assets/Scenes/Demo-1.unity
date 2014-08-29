@@ -70078,6 +70078,8 @@ GameObject:
   - 114: {fileID: 1572479460}
   - 114: {fileID: 1572479456}
   - 114: {fileID: 1572479458}
+  - 114: {fileID: 1572479455}
+  - 114: {fileID: 1572479454}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -70112,6 +70114,38 @@ MonoBehaviour:
   texture: {fileID: 2800000, guid: a9295f8b837f2f34983c3a2f65527fcb, type: 3}
   fadeSpeed: 2
   lookForPlayer: 1
+--- !u!114 &1572479454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572479451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f655abb60eb5a4ab04e3c17e0c1ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSounds:
+  - {fileID: 8300000, guid: d9b1672c394acf64d99c7365f7825624, type: 3}
+  - {fileID: 8300000, guid: 01aeb07cc6158d64bbd0eb465dd42396, type: 3}
+  - {fileID: 8300000, guid: fda66c26acd44534aa882dfbbba53bf7, type: 3}
+  - {fileID: 8300000, guid: 64f9d3588fc2f9841a50b8a75c2a4daf, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: 5c22d176778d5d646bbb9e15c1a1b289, type: 3}
+  - {fileID: 8300000, guid: 11bd3959a76c7274ebd46a1fc60b984b, type: 3}
+  - {fileID: 8300000, guid: 92229594b4b33994395d2a9a9df2d388, type: 3}
+  - {fileID: 8300000, guid: c52ce2ca43d980446944ace81e8e1305, type: 3}
+--- !u!114 &1572479455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572479451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b658f8463af64664b93de29970a7ea8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1572479456
 MonoBehaviour:
   m_ObjectHideFlags: 0

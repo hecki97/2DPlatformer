@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour {
 	public SendDamageCollider sendDamageColliderR;	
 	public SendDamageCollider sendDamageColliderL;
 	
-	public AudioClip jumpSound;
-	public AudioClip attackSound;
+	/*public AudioClip jumpSound;
+	public AudioClip attackSound;*/
 
 	public Joystick joystickLeft;
 	public Joystick joystickRight;
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour {
 		if( characterController.isGrounded && _up)
 		{
             animator.SetBool("inputJump", true);
-            AudioSource.PlayClipAtPoint(jumpSound, transform.position, 1);
+            //AudioSource.PlayClipAtPoint(jumpSound, transform.position, 1);
             moveDirection.y = Mathf.Sqrt(2f * jumpHeight * gravity);
 		}
 		
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour {
 			{
 				isSlaying = true;
                 animator.SetBool("isSlaying", true);
-				AudioSource.PlayClipAtPoint(attackSound,transform.position,0.4F);
+				//AudioSource.PlayClipAtPoint(attackSound,transform.position,0.4F);
 				StartCoroutine(ResetIsSlaying());
 			}
 
@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour {
                 isSlaying = true;
                 inputAttackPressed = true;
                 animator.SetBool("isSlaying", true);
-                AudioSource.PlayClipAtPoint(attackSound, transform.position, 0.4F);
+                //AudioSource.PlayClipAtPoint(attackSound, transform.position, 0.4F);
                 StartCoroutine(ResetIsSlaying());
             }
 
