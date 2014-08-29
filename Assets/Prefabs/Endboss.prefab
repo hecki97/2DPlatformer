@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 33: {fileID: 3300000}
+  - 23: {fileID: 2300000}
+  - 54: {fileID: 5400000}
+  - 65: {fileID: 6500000}
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: Endboss
+  m_TagString: enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: -3.09086232e-08, y: .707106829, z: -.707106829, w: -3.09086232e-08}
+  m_LocalPosition: {x: 5, y: 1, z: 0}
+  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &2300000
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4c101165c0c79884f9671b0fc33ca282, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3300000
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5400000
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 10, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d306f7e7185c914b81d8468976d0c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  waypointPositions: []
+  currentHealth: 3
+  damageEffectPause: .200000003
+  tag: Player
+  damageValue: 1
+  deathPrefabRight: {fileID: 100000, guid: c2f0d9fb49c464e4ca8956752637b899, type: 2}
+  deathPrefabLeft: {fileID: 100000, guid: 6d433843266299d41a121acbe555fb5b, type: 2}
+  hitSound: {fileID: 8300000, guid: 5c22d176778d5d646bbb9e15c1a1b289, type: 3}
+  deathSound: {fileID: 8300000, guid: 3a3dd9d3dc6ddd8499b6985f03d33f42, type: 3}
+  dealDamagePrefab: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30cd25eddb5b7464e8da425ab45b19bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStayRight: []
+  animationStayLeft: []
+  animationGoRight:
+  - {fileID: 2800000, guid: 93e949db5e267924e8e8cffb7ad9ca8a, type: 3}
+  - {fileID: 2800000, guid: 27faee3499795704c8d43f879588dcfe, type: 3}
+  - {fileID: 2800000, guid: aa309625bec43694b962d22ec8bef80d, type: 3}
+  - {fileID: 2800000, guid: 7a7a0a6d6a0e75b44a2b9608b3c3a366, type: 3}
+  - {fileID: 2800000, guid: 03beffc66fb88c14b984a5cfaad4d1f7, type: 3}
+  - {fileID: 2800000, guid: 492129b54158b104a85fa8c95f96be75, type: 3}
+  - {fileID: 2800000, guid: 1f25abf40b7746e4b85afedb0bbef327, type: 3}
+  - {fileID: 2800000, guid: c95fcbdd7ccbe4a48829439cf84d62e9, type: 3}
+  animationGoLeft:
+  - {fileID: 2800000, guid: ed06f2a90d065a440932818c43ff7ea9, type: 3}
+  - {fileID: 2800000, guid: 75e9348e5ee4f474788a55ce4d570665, type: 3}
+  - {fileID: 2800000, guid: 5f32090cb9996684ca44e0f234856568, type: 3}
+  - {fileID: 2800000, guid: 417ace44a9e8002498f77d615a4501bd, type: 3}
+  - {fileID: 2800000, guid: dec6d87e8d046be44adea8522d55782b, type: 3}
+  - {fileID: 2800000, guid: a7c291017008f2149890a1c25b6396f5, type: 3}
+  - {fileID: 2800000, guid: 8700bd46ce5b06a4fa2e5dfeb735fb5d, type: 3}
+  - {fileID: 2800000, guid: c80fee3b555b3884aacfa55b4a90bf6e, type: 3}
+  animationJumpRight: []
+  animationJumpLeft: []
+  animationAttackRight: []
+  animationAttackLeft: []
+  speed: 10
+  currentAnimationType: 2
+  looping: 1
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1
