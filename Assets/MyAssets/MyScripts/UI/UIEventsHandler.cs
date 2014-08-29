@@ -59,9 +59,10 @@ public class UIEventsHandler : MonoBehaviour {
                 Application.platform == RuntimePlatform.OSXWebPlayer || Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.OSXPlayer ||   //Mac OSX
                 Application.platform == RuntimePlatform.LinuxPlayer //Linux
            )
-            IsMobile();
-        else
             Debug.Log("Disabled Touch Controls");
+        else
+            IsMobile();    
+        
     }
 
     void CheckPlayerHealth()

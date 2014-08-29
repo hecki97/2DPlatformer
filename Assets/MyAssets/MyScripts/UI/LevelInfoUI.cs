@@ -20,14 +20,6 @@ public class LevelInfoUI : MonoBehaviour {
         UIEventsHandler.OnPlayerDeath += this.SceneRestart;
     }
 
-    void Start()
-    {
-        if (levelInfoTimer > 0)
-            levelInfoTimer -= Time.deltaTime;
-        else
-            this.gameObject.SetActive(false);
-    }
-
     void OnDisable()
     {
         UIEventsHandler.OnSceneRestart -= this.SceneRestart;
@@ -42,5 +34,10 @@ public class LevelInfoUI : MonoBehaviour {
     void Update()
     {
         levelInfoText.text = World + "\n" + Level;
+
+        if (levelInfoTimer > 0)
+            levelInfoTimer -= Time.deltaTime;
+        else
+            this.gameObject.SetActive(false);
     }
 }

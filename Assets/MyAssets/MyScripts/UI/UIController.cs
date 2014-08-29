@@ -26,9 +26,8 @@ public class UIController : MonoBehaviour {
     private DebugUI ui_debug;
 
 	// Use this for initialization
-	void Start () {
-        timeleft = updateInterval;  
-        
+	void Start () 
+    {
         sceneFader = GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneFader>();
         healthController = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthController>();
 
@@ -37,13 +36,15 @@ public class UIController : MonoBehaviour {
         
         ui_healthPoints = GameObject.Find("UI_Canvas/UI_HealthPoints").GetComponent<HealthPointsUI>();
         ui_debug = GameObject.Find("UI_Canvas/UI_Debug").GetComponent<DebugUI>();
+
+        ui_levelInfo.levelInfoTimer = levelInfoTimer;
+        ui_debug.gameVersion = gameVersionText.text;
+        timeleft = updateInterval;
 	}
 	
 	// Update is called once per frame
     void Update()
     {
-        ui_debug.gameVersion = gameVersionText.text;
-        
         SetValues();
         Timer();
         CalculateFps();
@@ -56,7 +57,6 @@ public class UIController : MonoBehaviour {
         ui_timerText.timer = timer;
         ui_levelInfo.World = World;
         ui_levelInfo.Level = Level;
-        ui_levelInfo.levelInfoTimer = levelInfoTimer;
     }
 
     void Timer()
